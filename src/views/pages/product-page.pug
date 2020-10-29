@@ -1,0 +1,15 @@
+extends ../layouts/default
+
+block variables
+	- const title = "Карточка товара";
+
+block content
+	.container
+		p Тут просто место для хлебных крошечек...
+	main
+		include ../blocks/product-page/product-page
+	include ../blocks/same-akb/same-akb
+block scripts
+	script(src="/js/main.js")
+	script(src="/js/product.js")
+	script(src="/js/vendor.js")

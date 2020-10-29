@@ -1,0 +1,52 @@
+.about {
+
+  @include max-767 {
+    padding: $p-sec-sm;
+  }
+  position: relative;
+  padding: 15px 0 40px;
+
+  // .about__row
+  &__row {
+    margin: 0 -15px;
+  }
+
+  // .about__img
+  &__img {
+    @include col();
+    @include size(3);
+    @include max-767 {
+      @include size(12);
+      opacity: 0.2;
+      position: absolute;
+      z-index: -1;
+      top: 40px;
+      right: 0;
+      bottom: 0;
+      left: 0;
+    }
+    img {
+      max-width: 100%;
+      max-height: 100%;
+      margin: auto;
+    }
+  }
+
+  // .about__text
+  &__text {
+    @include col();
+    @include size(9);
+    @include max-767 {
+      @include size(12);
+    }
+    line-height: 1.8;
+  }
+  
+  // .about__title
+  &__title {
+    @include max-767 {
+      margin: 0 auto;
+    }
+  }
+}
+  

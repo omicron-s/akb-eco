@@ -1,0 +1,31 @@
+//Footer
+footer.footer
+  .container
+    .footer__row.row
+      .logo
+        a.logo__link(href="/")
+          img(src="/img/footer/logo.png" alt="Лого")
+      nav.footer__list
+        ul
+          li
+            a(href="#") Каталог
+          li
+            a(href="#") Выкуп аккумуляторов
+          li
+            a(href="#") Информация для клиентов
+          li
+            a(href="#") Услуги
+          li
+            a(href="#") Контакты
+      .footer__right
+        .footer__contacts.header__contacts
+          a(href="mailto:@akb-eco.ru") 
+            span.fa
+            span.tdu @akb-eco.ru
+          a(href="tel:88000000000") 8 (800) 000-00-00
+          button(data-modal='call') Заказать звонок
+        .footer__copyright
+          a(href="personal") Политика конфиденциальности
+          a(href="https://web2.ru" target='_blank') Студия Web2 – Создание и продвижение сайтов
+          small © 2020 Akb-eco.ru. Все права защищены
+  include ./../../components/scroll-up/scroll-up

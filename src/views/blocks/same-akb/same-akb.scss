@@ -1,0 +1,18 @@
+.same-akb {
+  @include max-767 {
+    padding: $p-sec-sm;
+  }
+  padding: $p-sec;
+  .title {
+    // margin-bottom: 10px;
+    @include max-767 {
+      text-align: center;
+    }
+  }
+  // .same-akb__swiper
+  &__swiper {
+    margin: -30px 0;
+  }
+}
+
+  

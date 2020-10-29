@@ -1,0 +1,352 @@
+.product-page {
+  padding: 25px 0;
+
+  >.container >.row {
+    margin: 0 -15px;
+  }
+
+  // .product-page__img
+  &__img {
+    @include col();
+    @include size(5);
+
+    @include max-767 {
+      @include size(12);
+      max-width: 400px;
+      margin: 0 auto 15px;
+    }
+    position: relative;
+
+    .compare-icon {
+
+      @include max-1023 {
+        position: static;
+        margin: 0 0 15px auto;
+      }
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      border: 1px solid #eeeeee;
+      border-radius: 50%;
+    
+      &:active {
+        transition: $transBtn;
+        background-color: rgba($active, 0.2);
+        border-color: $active;
+      }
+      // .compare-icon__wrapper
+      &__wrapper {
+      }
+      &:hover, &:focus {
+        border-color: $hover;
+        background-color: rgba($hover, 0.2);
+      }
+      
+      &[data-compare=true] {
+        background-color: #eeeeee;
+    
+        &:active {
+          transition: $transBtn;
+          background-color: rgba($active, 0.5);
+          border-color: $active;
+        }
+    
+        &:hover, &:focus {
+          border-color: $hover;
+          background-color: rgba($hover, 0.5);
+        }
+      }
+    }
+
+    img {
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+
+  // .product-page__desc
+  &__desc {
+    @include size(7);
+    @include col();
+
+    @include max-767 {
+      @include size(12);
+    }
+  }
+}
+
+
+.product-desc {
+  display: flex;
+  flex-direction: column;
+
+  .title {
+
+    @include max-539 {
+      text-align: center;
+    }
+    margin-top: -0.3em;
+    line-height: 1.15;
+    margin-bottom: 15px;
+  }
+
+  // .product-desc__code
+  &__code {
+    margin-bottom: 15px;
+  }
+
+  // .product-desc__price
+  &__price {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: $hover;
+  }
+
+  // .product-desc__trade
+  &__trade {
+    display: flex;
+    position: relative;
+    width: 100%;
+    max-width: 380px;
+    margin-bottom: 10px;
+  }
+
+  // .product-desc__trade-banner
+  &__trade-banner {
+    display: flex;
+    align-items: center;
+    padding: 1em;
+    background-color: $active;
+    font-size: 12px;
+
+    b {
+      max-width: 170px;
+      margin: 0 15px;
+    }
+
+    button {
+      width: 18px;
+      height: 18px;
+      background-color: #fff;
+      border-radius: 50%;
+      font-weight: 700;
+      color: #000;
+
+      &:hover, &:focus {
+        color: #fff;
+        background-color: $hover;
+      }
+
+      &:active {
+        transition: $transBtn;
+        color: #fff;
+        background-color: #000;
+      }
+    }
+  }
+
+  //.product-desc__trade-modal
+  &__trade-modal {
+    position: absolute;
+    z-index: 10;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 20px 35px 10px 20px;
+    transition: $trans;
+    background-color: #fff;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    visibility: hidden;
+
+    .btn-close {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+    }
+
+    >.row {
+      margin-bottom: 20px;
+      button {
+        flex: 1 1 50%;
+        &:disabled {
+          color: #fff;
+          background-color: $hover;
+          pointer-events: none;
+          cursor: default;
+        }
+      }
+    }
+
+    ul {
+      &.show {
+        span::after {
+          width: 0;
+        }
+      }
+    }
+
+    li {
+      display: flex;
+      padding: 5px 0;
+      border-top: 1px solid rgba(0, 0, 0, 0.3);
+
+      &:first-child {
+        text-transform: uppercase;
+        font-weight: 700;
+        border-top-width: 0;
+
+        span::after {
+          width: 0;
+        }
+      }
+
+      span {
+        flex: 1 1 50%;
+        position: relative;
+  
+        &:after {
+          content: "";
+          position: absolute;
+          top: 0;
+          right: 0;
+          width: 100%;
+          height: 100%;
+          transition: 0.4s $transFunc;
+          background-color: #fff;
+        }
+      }
+    }
+
+
+
+    &.show {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  // .product-desc__quantity
+  &__quantity {
+    margin-bottom: 10px;
+  }
+
+  // .product-desc__compare
+  &__compare {
+    display: flex;
+    align-items: center;
+    align-self: flex-start;
+    color: $hover;
+    margin-bottom: 20px;
+
+    .compare-icon__wrapper span, .compare-icon__wrapper span::before {
+      background-color: $hover;
+    }
+
+    p {
+      margin: 0;
+      text-decoration: underline;
+    }
+
+    &:hover, &:focus {
+      color: $active;
+      .compare-icon__wrapper span, .compare-icon__wrapper span::before {
+        background-color: $active;
+      }
+    }
+  }
+  // .product-desc__btns
+  &__btns {
+
+    @include max-539 {
+      justify-content: space-between;
+      margin: 0 -10px 20px;
+      button {
+        margin: 0 10px;
+      }
+    }
+    display: flex;
+    margin: 0 -15px 20px;
+    .btn.add {
+    }
+    .btn.one-click {
+    }
+
+    button {
+      width: 180px;
+      margin: 0 15px;
+    }
+  }
+
+  // .product-desc__list
+  &__list {
+    margin-bottom: 10px;
+
+
+    li {
+
+      @include max-539 {
+        flex-direction: column;
+        b {
+          flex: 0 1 auto;
+        }
+      }
+      display: flex;
+      padding: 5px 0;
+      transition: visibility $trans $transTimer, font-size $trans $transTimer, padding $trans $transTimer, opacity $trans;
+
+      &:nth-child(n + 11) {
+        visibility: hidden;
+        font-size: 0;
+        padding: 0;
+        opacity: 0;
+        &.collapse {
+          padding: 5px 0;
+          font-size: 14px;
+          visibility: visible;
+          opacity: 1;
+          transition: visibility $trans, font-size $trans, padding $trans, opacity $trans $transTimer;
+        }
+      }
+    }
+
+    b {
+      flex: 0 0 220px;
+    }
+    p {
+      margin: 0;
+    }
+  }
+
+  // .product-desc__more
+  &__more {
+    color: $hover;
+    align-self: flex-start;
+    font-weight: 700;
+    padding: 10px 0;
+
+    span {
+      margin: 0 15px;
+      transition: transform $trans;
+      &::before {
+        content: fa-content($fa-var-angle-down);
+      }
+    }
+
+    &:hover, &:focus {
+      color: $active;
+    }
+
+    &:active {
+      color: #000;
+      transition: $transBtn;
+    }
+
+    &.collapse {
+      span {
+        transform: rotateX(180deg);
+      }
+    }
+  }
+}
+  

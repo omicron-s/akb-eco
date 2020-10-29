@@ -1,0 +1,253 @@
+.card {
+  display: flex;
+  // flex: 0 1 258px;
+  flex-direction: column;
+  position: relative;
+  z-index: 0;
+  // max-width: 300px;
+  // width: 258px;
+  // height: 100%;
+  // margin: 0 -1px -1px 0;
+  border: 1px solid $cardBord;
+  padding: 15px 20px;
+  transition: $trans;
+  background-color: #fff;
+
+  .btn {
+    display: block;
+    width: 160px;
+    margin: 0 auto;
+
+    &:disabled {
+      background-color: $disable;
+      color: #000;
+      font-weight: 700;
+      pointer-events: none;
+    }
+  }
+
+  &.zero {
+
+    .card__stock {
+      small {
+        color: $error;
+      }
+
+      span {
+        display: none;
+      }
+    }
+
+    .card__footer-right {
+      pointer-events: none;
+    }
+  }
+
+  &:not(.zero):hover, &:not(.zero):focus-within {
+    z-index: 1;
+    box-shadow: 0 0 28px rgba(109, 96, 76, 0.2);
+  }
+  // .card__header
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+
+    small::before {
+      content: "Артикул: ";
+    }
+
+    button {
+      margin: -4px -12px 0 0;
+      border: 1px solid #eeeeee;
+      border-radius: 50%;
+      
+      &:hover, &:focus {
+        border-color: $hover;
+        background-color: rgba($hover, 0.2);
+      }
+    
+      &:active {
+        transition: $transBtn;
+        background-color: rgba($active, 0.2);
+        border-color: $active;
+      }
+      
+      &[data-compare=true] {
+        background-color: #eeeeee;
+    
+        &:hover, &:focus {
+          border-color: $hover;
+          background-color: rgba($hover, 0.5);
+        }
+    
+        &:active {
+          transition: $transBtn;
+          background-color: rgba($active, 0.5);
+          border-color: $active;
+        }
+      }
+    }
+  }
+
+  // .card__img
+  &__img {
+    border: 1px solid transparent;
+    transition: $trans;
+    margin-bottom: 10px;
+
+    img {
+      max-width: 100%;
+      margin: auto;
+      transition: $trans;
+    }
+
+    &:hover {
+      img {
+        opacity: 0.8;
+      }
+    }
+
+    &:focus {
+      border-color: $hover;
+    }
+  }
+
+  // .card__title
+  &__title {
+    display: block;
+    line-height: 1.3;
+    margin-bottom: 5px;
+  }
+
+  // .card__custom
+  &__custom {
+    color: $hover;
+    text-transform: uppercase;
+    font-size: 12px;
+    line-height: 1.35;
+  }
+
+  // .card__stats
+  &__stats {
+    flex-grow: 1;
+    line-height: 1.35;
+    font-size: 12px;
+    color: $cardGrayFont;
+    margin-bottom: 10px;
+
+    li[data-cap] {
+      &::before {
+        content: "Емкость: ";
+      }
+
+      &::after {
+        content: " А/ч";
+      }
+    }
+
+    li[data-curr] {
+      &::before {
+        content: "Пусковой ток: ";
+      }
+
+      &::after {
+        content: " А";
+      }
+    }
+
+    li[data-polar] {
+      &::before {
+        content: "Полярность: ";
+      }
+    }
+
+    li[data-size] {
+      &::before {
+        content: "Габариты: ";
+      }
+    }
+
+    li[data-vendor] {
+      &::before {
+        content: "Артикул: ";
+      }
+    }
+  }
+
+  // .card__footer
+  &__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 25px;
+  }
+
+  // .card__footer-left
+  &__footer-left {
+    display: flex;
+    flex-direction: column;
+    
+    b {
+      font-size: 18px;
+
+      &::after {
+        content: " руб.";
+      }
+    }
+  }
+
+  // .card__stock
+  &__stock {
+
+    span::before {
+      content: fa-content($fa-var-check);
+      color: $hover;
+      font-size: 12px;
+      margin-right: 10px;
+    }
+  }
+
+  // .card__footer-right
+  &__footer-right {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-width: 90px;
+    min-height: 40px;
+    background-color: $disable;
+
+    button {
+      width: 30px;
+      border: 1px solid transparent;
+      padding: 12px 0;
+      transition: $trans;
+      color: $cardGrayFont;
+      user-select: none;
+
+      &:hover, &:focus {
+        border-color: $hover;
+        background-color: rgba($hover, 0.2);
+      }
+
+      &:active {
+        transition: $transBtn;
+        border-color: $active;
+        background-color: rgba($active, 0.2);
+      }
+
+      &[disabled] {
+        pointer-events: none;
+        color: transparent;
+      }
+    }
+  }
+}
+  
+.card-empty {
+  flex: 1 1 258px;
+  height: 0;
+  margin: 0 0 0 -1px;
+  visibility: hidden;
+  opacity: 0;
+}

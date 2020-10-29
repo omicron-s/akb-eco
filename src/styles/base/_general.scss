@@ -1,0 +1,544 @@
+/**** Базовые ****/
+html {
+  box-sizing: border-box;
+  // scroll-behavior: smooth; Не работает в IE =(
+  font-family: Roboto, sans-serif; //Базовые шрифты
+  font-size: 14px; //Базовый размер шрифта
+}
+
+*, *:after, *:before {
+  box-sizing: inherit;
+}
+
+h1, h2, h3, h4, h5, h6, ul {
+  margin: 0;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+img {
+  display: block;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  padding: 0;
+  transition: $trans; // доп. тег
+}
+
+/**** Медиа ****/
+@mixin max-539 {
+  @media (max-width: 539.98px) {
+    @content;
+  }
+}
+
+@mixin min-540 {
+  @media (min-width: 540px) {
+    @content;
+  }
+}
+
+@mixin max-767 {
+  @media (max-width: 767.98px) {
+    @content;
+  }
+}
+
+@mixin min-768 {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin max-1023 {
+  @media (max-width: 1023.98px) {
+    @content;
+  }
+}
+
+@mixin min-1024 {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin max-1199 {
+  @media (max-width: 1199.98px) {
+    @content;
+  }
+}
+
+@mixin min-1200 {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin max-1599 {
+  @media (max-width: 1599.98px) {
+    @content;
+  }
+}
+@mixin min-1600 {
+  @media (min-width: 1600px) {
+    @content;
+  }
+}
+
+
+@mixin hover {
+  &:not([disabled]):hover {
+    @content;
+  }
+}
+/****  Допольнительные теги****/
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: $trans;
+}
+
+input, button, textarea {
+  // font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+
+a:focus, button:focus, input:focus, textarea:focus {
+  outline: none;
+}
+
+small {
+  font-size: 12px;
+}
+
+*::selection {
+  background-color: rgba($hover, .2);
+}
+
+/* textarea {
+  resize: vertical;
+  min-height: 250px;
+  max-height: 500px;
+} */
+
+/****  Допольнительные классы ****/
+
+/* body.fixed {
+  overflow: hidden;
+}
+ */
+
+.container {
+  @include container();
+  /*   @include sm(max-width, 540px);
+  @include md(max-width, 700px);
+  @include lg(max-width, 990px); */
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  margin: -1px;
+  clip: rect(0 0 0 0);
+  border: 0;
+  padding: 0;
+}
+
+.title {
+  @include max-767 {
+    font-size: 24px;
+  }
+  font-size: 30px;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+
+  a {
+    display: block;
+
+    &:focus {
+      box-shadow: 0 0 0 2px rgba($hover, 0.5);
+    }
+  }
+}
+
+.banner {
+  position: relative;
+  z-index: 0;
+  // background-image: url('../img/header/banner.jpg');
+  // background-repeat: no-repeat;
+  // background-position: center;
+  // min-height: 400px;
+  overflow: hidden;
+
+  img {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+}
+
+.btn {
+  padding: 10px;
+  background-color: $hover;
+  color: #fff;
+  transition: $trans;
+
+  &:hover, &:focus {
+    background-color: darken($hover, 10%);
+  }
+  
+  &:active {
+    background-color: $active;
+    transition: $transBtn;
+  }
+}
+
+.btn-i {
+  border: 1px solid $hover;
+  padding: 9px;
+  transition: $trans;
+  background-color: #fff;
+  color: $hover;
+
+  &:hover, &:focus {
+    background-color: darken(#fff, 10%);
+  }
+  
+  &:active {
+    transition: $transBtn;
+    background-color: $active;
+  }
+}
+
+.btn-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 20px;
+  height: 20px;
+  transition: $trans;
+  box-shadow: inset 0 0 0 0 $error;
+
+  &::before, &::after {
+    content: "";
+    position: absolute;
+    width: 12px;
+    height: 1px;
+    background-color: #000;
+    transition: $trans;
+  }
+
+  &::before {
+    transform: rotate(45deg);
+  }
+
+  &::after {
+    transform: rotate(-45deg);
+  }
+
+  &:hover, &:focus {
+    // background-color: $error;
+    box-shadow: inset 0 0 0 20px $error;
+    &::before, &::after {
+      height: 2px;
+      transform: rotate(0);
+      background-color: #fff;
+    }
+  }
+}
+
+.btn-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(139, 152, 167, 0.5);
+
+  &:hover, &:focus {
+    border-color: $hover;
+    color: $hover;
+  }
+
+  .active {
+    background-color: $hover;
+    color: #fff;
+  }
+}
+
+
+/* .media-card {
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
+  justify-items: flex-end;
+  transition: $trans;
+  background-color: #fff;
+
+  &:hover, &:focus {
+    color: #fff;
+    background-color: $blue;
+    
+    .media-card__text p, time {
+      color: #fff;
+    }
+  }
+
+  // .media-card__img
+  &__img {
+    position: relative;
+    margin: auto;
+
+    img {
+      max-width: 100%;
+      max-height: 350px;
+    }
+  }
+
+  //.media-card__text
+  &__text {
+    padding: 15px 15px 25px;
+    transition: $trans;
+    
+    time {
+      font-size: 12px;
+      color: #000;
+    }
+
+    p {
+      display: -webkit-box;
+      height: calc(1em * 3 * 1.3);
+      overflow: hidden;
+      font-size: 14px;
+      line-height: 1.3;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      color: $blue;
+      margin: 15px 0 0;
+    }
+  }
+} */
+
+/* .modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  z-index: 1000;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: background-color $trans;
+  background-color: rgba(0, 0, 0, 0);
+
+  // .modal__content
+  &__content {
+    // display: none;
+    position: relative;
+    max-width: 500px;
+    padding: 25px 15px 30px;
+    transform: scale(0);
+    transition: $trans;
+    background-color: #fff;
+  }
+
+  // .modal__btn
+  &__btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    background-color: transparent;
+    
+    &::before, &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 20px;
+      height: 1px;
+      transition: $trans;
+      background-color: $blue;
+    }
+
+    &::before {
+      top: 9px;
+      transform: rotate(45deg);
+    }
+    &::after {
+      bottom: 10px;
+      transform: rotate(-45deg);
+    }
+
+    &:hover, &:focus {
+      &::before, &::after {
+        transform: rotate(0);
+        background-color: $green;
+      }
+    }
+  }
+  &.display {
+    display: flex;
+
+    .modal__content {
+      display: block;
+    }
+  }
+  &.overlay {
+    background-color: rgba(0, 0, 0, 0.75);
+    top: 0;
+
+    .modal__content {
+      transform: scale(1);
+    }
+  }
+} */
+
+
+/****  Font-awesome классы ****/
+
+.fa {
+  @extend %fa-icon;
+}
+
+.far {
+  @extend .far;
+}
+
+
+/****  Swiper классы ****/
+.swiper-container:hover, .swiper-container:focus-within {
+  .swiper-button-prev, .swiper-button-next {
+    opacity: 1;
+  }
+}
+
+.swiper-container {
+  padding: 30px 0;
+  margin-bottom: 30px;
+}
+
+.swiper-wrapper {
+  box-sizing: border-box;
+  height: unset;
+}
+
+.swiper-button-prev, .swiper-button-next {
+
+  @include max-767 {
+    display: none;
+  }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  z-index: 3;
+  top: 60%;
+  width: 45px;
+  height: 45px;
+  transform: translateY(-50%);
+  color: #000;
+  background-color: $cardBord;
+  font-size: 16px;
+  /* Добавил тень, т.к. на белом фоне не видно */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  transition: $trans;
+  opacity: 0;
+
+  &:active {
+    transition: $transBtn;
+    background-color: $active;
+  }
+  @extend .fa;
+
+  &:hover, &:focus {
+    background-color: $hover;
+    color: #fff;
+  }
+
+  &.swiper-button-disabled {
+    opacity: 0;
+    cursor: auto;
+    pointer-events: none;
+    visibility: hidden;
+  }
+}
+
+.swiper-button-prev, .swiper-container-rtl .swiper-button-next {
+  right: auto;
+  left: 15px;
+
+  &:before {
+    content: fa-content($fa-var-angle-left);
+  }
+}
+
+.swiper-button-next, .swiper-container-rtl .swiper-button-prev {
+  right: 15px;
+  left: auto;
+  &:before {
+    content: fa-content($fa-var-angle-right);
+  }
+}
+.swiper-button-lock {
+  display: none;
+}
+
+
+.swiper-pagination {
+  position: absolute;
+  z-index: 0;
+  text-align: center;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  margin-top: 15px;
+}
+
+.swiper-pagination-bullet {
+  display: inline-block;
+  width: 13px;
+  height: 13px;
+  margin: 0 5px;
+  border: 1px solid $hover;
+  transition: $trans, center;
+  // border-radius: 50%;
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgba($hover, 0.5);
+  }
+}
+
+.swiper-pagination-bullet-active {
+  background-color: $active;
+  border: 1px solid #000;
+  pointer-events: none;
+  cursor: default;
+
+  &:hover {
+    background-color: $active;
+  }
+}

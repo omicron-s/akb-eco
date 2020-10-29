@@ -1,0 +1,22 @@
+extends layouts/default
+
+block variables
+	- const title = "Главная"
+
+block content
+	.banner
+		//- h1 Обмен и продажа аккумуляторов
+		picture
+			source(srcset="/img/header/banner-sm.png" media="(max-width: 767.98px)")
+			source(srcset="/img/header/banner.jpg" )
+			img(src="/img/header/banner.jpg" alt="Баннер")
+	main
+		include blocks/selection/selection
+		include blocks/about/about
+		include blocks/cta/cta
+		include blocks/akb-select/akb-select
+
+block scripts
+	script(src="/js/main.js")
+	script(src="/js/home.js")
+	script(src="/js/vendor.js")

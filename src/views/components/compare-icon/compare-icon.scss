@@ -1,0 +1,75 @@
+.compare-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 0;
+  width: 30px;
+  height: 30px;
+  padding: 5px;
+  $bgcCompare: #2c363a;
+  
+  &:hover, &:focus, .product-desc__compare:focus-within &, .product-desc__compare:hover & {
+    .compare-icon__wrapper {
+
+      span:nth-child(1) {
+        height: 9px;
+      
+        &::before {
+          height: 12px;
+        }
+      }
+
+      span:nth-child(2) {
+        height: 7px;
+  
+        &::before {
+          height: 5px;
+        }
+      }
+    }
+  }
+
+  // .compare-icon__wrapper
+  &__wrapper {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    height: 12px;
+
+    span {
+      display: inline-block;
+    }
+  
+    span, span::before {
+      position: relative;
+      width: 2px;
+      transition: $trans;
+      background-color: $bgcCompare;
+    }
+  
+    span::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 4px;
+    }
+  
+    span:nth-child(1) {
+      height: 7px;
+      margin-right: 6px;
+  
+      &::before {
+        height: 5px;
+      }
+    }
+  
+    span:nth-child(2) {
+      height: 9px;
+      margin-right: 4px;
+  
+      &::before {
+        height: 12px;
+      }
+    }
+  }
+}

@@ -1,0 +1,66 @@
+mixin card(vendorHead, img, title, custom, cap, curr, polar, size, vendor, quantity, price)
+  .card
+    .card__header
+      small= vendorHead
+      include ./../../components/compare-icon/compare-icon
+    a.card__img(href="/pages/product-page.html")
+      img(src="/img/catalog/" + img alt="Аккумулятор")
+    b.card__title= title
+    b.card__custom= custom
+    ul.card__stats
+      li(data-cap)= cap
+      li(data-curr)= curr
+      li(data-polar)= polar
+      li(data-size)= size
+      li(data-vendor)= vendor
+    .card__footer
+      .card__footer-left
+        .card__stock(data-quantity= quantity)
+          span.fa
+          small В наличии
+        b= price
+      .card__footer-right
+        button(data-dec) -
+        span 1
+        button(data-inc) +
+    button.btn Заказать
+
+mixin card-slide(vendorHead, img, title, custom, cap, curr, polar, size, vendor, quantity, price)
+  .card.swiper-slide
+    .card__header
+      small= vendorHead
+      include ./../../components/compare-icon/compare-icon
+    a.card__img(href="/pages/product-page.html")
+      img(src="/img/catalog/" + img alt="Аккумулятор")
+    b.card__title= title
+    b.card__custom= custom
+    ul.card__stats
+      li(data-cap)= cap
+      li(data-curr)= curr
+      li(data-polar)= polar
+      li(data-size)= size
+      li(data-vendor)= vendor
+    .card__footer
+      .card__footer-left
+        .card__stock(data-quantity= quantity)
+          span.fa
+          small В наличии
+        b= price
+      .card__footer-right
+        button(data-dec) -
+        span 1
+        button(data-inc) +
+    button.btn Заказать
+
+mixin card-compare(vendorHead, img, title, price)
+  .card.swiper-slide
+    .card__header
+      small= vendorHead
+      button.btn-close
+    a.card__img(href="/pages/product-page.html")
+      img(src="/img/catalog/" + img alt="Аккумулятор")
+    b.card__title= title
+    .card__footer
+      .card__footer-left
+        b= price
+

@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Карточка товара</title>
+    <base href="localhost">
+    <meta name="theme-color" content="#fff">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="/img/favicons/manifest.min.json">
+    <link rel="shortcut icon" href="/img/favicons/favicon.ico" type="image/x-icon">
+    <link rel="icon" sizes="16x16" href="/img/favicons/favicon-16x16.png" type="image/png">
+    <link rel="icon" sizes="32x32" href="/img/favicons/favicon-32x32.png" type="image/png">
+    <link rel="icon" sizes="48x48" href="/img/favicons/android-chrome-48x48.png" type="image/png">
+    <link rel="icon" sizes="96x96" href="/img/favicons/android-chrome-96x96.png" type="image/png">
+    <link rel="apple-touch-icon-precomposed" href="/img/favicons/apple-touch-icon-precomposed.png">
+    <link rel="apple-touch-icon" href="/img/favicons/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="/img/favicons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/img/favicons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/img/favicons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/img/favicons/apple-touch-icon-76x76.png">
+    <link rel="stylesheet" href="/styles/main.min.css">
+  </head>
+  <body>
+    <!--header-->
+    <header class="header">
+      <div class="container">
+        <div class="header__row">
+          <div class="header__minimenu">
+            <button class="header__burger"><span></span></button>
+            <div class="logo"><a class="logo__link" href="/">
+                <picture>
+                  <source media="(max-width: 767.98px)" srcset="/img/header/logo-sm.png">
+                  <source srcset="/img/header/logo.png"><img src="/img/header/logo.png" alt="Лого">
+                </picture></a></div><a href="tel:88000000000"><span class="fa"></span></a>
+            <div class="navbar__item compare-header"> <a class="navbar__link" href="sravnenie">
+                <div><span></span><small style="display:none">0</small></div></a></div>
+          </div>
+          <div class="row">
+                <div class="header__search input-search">
+                  <input type="text" pattern=".{1,}" required placeholder="Поиск по сайту"><span class="input-search__placeholder">Поиск по сайту</span><span class="fa input-search__icon"></span>
+                </div>
+            <div class="search-block">
+              <div class="search-block__wrapper">
+                <div class="search-block__content">
+                  <ul>
+                    <li><a href="1">
+                        <div><img src="/img/header/test.png" alt="Товар"></div>
+                        <p>Название продукции в одну или две строки... Название продукции в одну или две строки</p></a></li>
+                    <li><a href="2">
+                        <div><img src="/img/header/test.png" alt="Товар"></div>
+                        <p>Название продукции в одну или две строки... Название продукции в одну или две строки</p></a></li>
+                    <li><a href="3">
+                        <div><img src="/img/header/test.png" alt="Товар"></div>
+                        <p>Название продукции в одну или две строки... Название продукции в одну или две строки</p></a></li>
+                    <li><a href="4">
+                        <div><img src="/img/header/test.png" alt="Товар"></div>
+                        <p>Название продукции в одну или две строки... Название продукции в одну или две строки</p></a></li>
+                    <li><a href="5">
+                        <div><img src="/img/header/test.png" alt="Товар"></div>
+                        <p>Название продукции в одну или две строки... Название продукции в одну или две строки</p></a></li>
+                    <li><a href="6">
+                        <div><img src="/img/header/test.png" alt="Товар"></div>
+                        <p>Название продукции в одну или две строки... Название продукции в одну или две строки</p></a></li>
+                    <li><a href="7">
+                        <div><img src="/img/header/test.png" alt="Товар"></div>
+                        <p>Название продукции в одну или две строки... Название продукции в одну или две строки</p></a></li>
+                    <li><a href="8">
+                        <div><img src="/img/header/test.png" alt="Товар"></div>
+                        <p>Название продукции в одну или две строки... Название продукции в одну или две строки</p></a></li>
+                    <li><a href="9">
+                        <div><img src="/img/header/test.png" alt="Товар"></div>
+                        <p>Название продукции в одну или две строки... Название продукции в одну или две строки</p></a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="search-block__fixed"><a href="catalog">Все товары<span class="fa"></span></a></div>
+            </div>
+            <div class="header__contacts"><a href="mailto:@akb-eco.ru"> <span class="fa"></span><span class="tdu">@akb-eco.ru</span></a><a href="tel:88000000000">8 (800) 000-00-00</a>
+              <button data-modal="call">Заказать звонок</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--Навбар - меню-->
+      <div class="navbar">
+        <div class="container">
+          <nav class="navbar__menu">
+            <ul class="navbar__list">
+              <li class="navbar__item" id="superMenu"><a class="navbar__link" href=""><span></span>Каталог</a>
+                <!--Суперменю-->
+                <div class="navbar__supermenu">
+                  <div class="container">
+                    <ul class="supermenu">
+                      <!-- Авто-->
+                      <li class="supermenu__item">
+                        <div class="supermenu__img"><img src="/img/header/auto.png" alt="Авто"></div><a class="supermenu__title" href="auto-akb">Легковые аккумуляторы<span class="fa"> </span></a>
+                        <div class="supermenu__collapse">
+                          <p>(По ёмкости, А•ч)</p>
+                          <ul>
+                            <li><a href="auto-akb/cap/35">35</a></li>
+                            <li><a href="auto-akb/cap/40">40</a></li>
+                            <li><a href="auto-akb/cap/45">45</a></li>
+                            <li><a href="auto-akb/cap/50">50</a></li>
+                            <li><a href="auto-akb/cap/55">55</a></li>
+                            <li><a href="auto-akb/cap/60">60</a></li>
+                            <li><a href="auto-akb/cap/65">65</a></li>
+                            <li><a href="auto-akb/cap/70">70</a></li>
+                            <li><a href="auto-akb/cap/75">75</a></li>
+                            <li><a href="auto-akb/cap/80">80</a></li>
+                            <li><a href="auto-akb/cap/85">85</a></li>
+                            <li><a href="auto-akb/cap/90">90</a></li>
+                            <li><a href="auto-akb/cap/95">95</a></li>
+                            <li><a href="auto-akb/cap/100">100</a></li>
+                            <li><a href="auto-akb/cap/105">105</a></li>
+                            <li><a href="auto-akb/cap/110">110</a></li>
+                          </ul>
+                          <hr><a class="supermenu__title" href="auto-akb/brand">По стране авто</a>
+                          <p>(Родина бренда)</p>
+                          <ul>
+                            <li><a href="auto-akb/brand/japan">Японские авто</a><a href="auto-akb/brand/korea">Корейские авто</a></li>
+                          </ul>
+                          <hr><a class="supermenu__title" href="auto-akb/category">По категории</a>
+                          <ul>
+                            <li><a href="auto-akb/category/cheap">Недорогие</a><a href="auto-akb/category/replace">Подменные</a></li>
+                          </ul>
+                        </div>
+                      </li>
+                      <!-- Грузовые-->
+                      <li class="supermenu__item">
+                        <div class="supermenu__img"><img src="/img/header/truck.png" alt="Грузовик"></div><a class="supermenu__title" href="truck-akb">Грузовые аккумуляторы<span class="fa"></span></a>
+                        <div class="supermenu__collapse">
+                          <p>(По ёмкости, А•ч)</p>
+                          <ul>
+                            <li><a href="truck-akb/cap/120">120</a></li>
+                            <li><a href="truck-akb/cap/132">132</a></li>
+                            <li><a href="truck-akb/cap/135">135</a></li>
+                            <li><a href="truck-akb/cap/140">140</a></li>
+                            <li><a href="truck-akb/cap/145">145</a></li>
+                            <li><a href="truck-akb/cap/150">150</a></li>
+                            <li><a href="truck-akb/cap/180">180</a></li>
+                            <li><a href="truck-akb/cap/190">190</a></li>
+                            <li><a href="truck-akb/cap/225">225</a></li>
+                            <li><a href="truck-akb/cap/230">230</a></li>
+                          </ul>
+                          <hr><a class="supermenu__title" href="truck-akb/country">По стране АКБ</a>
+                          <p>(Страна производства)</p>
+                          <ul>
+                            <li><a href="truck-akb/country/japan">Япония</a><a href="truck-akb/country/russia">Россия</a><a href="truck-akb/country/korea">Корея</a><a href="truck-akb/country/austria">Австрия</a><a href="truck-akb/country/ыlovenia">Словения</a><a href="truck-akb/country/тurkey">Турция</a></li>
+                          </ul>
+                          <hr><a class="supermenu__title" href="truck-akb/technolgy">По категории</a>
+                          <p>(Изготовление)</p>
+                          <ul>
+                            <li><a href="truck-akb/technolgy/agm">AGM</a><a href="truck-akb/technolgy/efb">EFB</a></li>
+                          </ul>
+                        </div>
+                      </li>
+                      <!-- Мото-->
+                      <li class="supermenu__item">
+                        <div class="supermenu__img"><img src="/img/header/moto.png" alt="Мото"></div><a class="supermenu__title" href="moto-akb">Мото аккумуляторы<span class="fa"></span></a>
+                        <div class="supermenu__collapse">
+                          <p>(По ёмкости, А•ч)</p>
+                          <ul>
+                            <li><a href="moto-akb/cap/4">4</a></li>
+                            <li><a href="moto-akb/cap/5">5</a></li>
+                            <li><a href="moto-akb/cap/6">6</a></li>
+                            <li><a href="moto-akb/cap/7">7</a></li>
+                            <li><a href="moto-akb/cap/8">8</a></li>
+                            <li><a href="moto-akb/cap/9">9</a></li>
+                            <li><a href="moto-akb/cap/10">10</a></li>
+                            <li><a href="moto-akb/cap/11">11</a></li>
+                            <li><a href="moto-akb/cap/12">12</a></li>
+                            <li><a href="moto-akb/cap/13">13</a></li>
+                            <li><a href="moto-akb/cap/14">14</a></li>
+                            <li><a href="moto-akb/cap/15">15</a></li>
+                            <li><a href="moto-akb/cap/16">16</a></li>
+                            <li><a href="moto-akb/cap/17">17</a></li>
+                            <li><a href="moto-akb/cap/18">18</a></li>
+                            <li><a href="moto-akb/cap/19">19</a></li>
+                            <li><a href="moto-akb/cap/20">20</a></li>
+                            <li><a href="moto-akb/cap/21">21</a></li>
+                            <li><a href="moto-akb/cap/24">24</a></li>
+                            <li><a href="moto-akb/cap/30">30</a></li>
+                          </ul>
+                          <hr><a class="supermenu__title" href="moto-akb/type">По виду техники</a>
+                          <ul>
+                            <li><a href="moto-akb/type/moto">Для мотоциклов</a><a href="moto-akb/type/scooter">Для скутеров</a><a href="moto-akb/type/snowmobile">Для снегоходов</a><a href="moto-akb/type/atv">Для квадроциклов</a></li>
+                          </ul>
+                          <hr><a class="supermenu__title" href="moto-akb/category">По категории</a>
+                          <ul>
+                            <li><a href="moto-akb/category/agm">AGM</a><a href="moto-akb/category/gel">GEL</a><a href="moto-akb/category/dry">Сухозаряженные</a></li>
+                          </ul>
+                        </div>
+                      </li>
+                      <!-- Лодочные и БП-->
+                      <li class="supermenu__item" id="boardAndUps">
+                        <div>
+                          <div class="supermenu__img"><img src="/img/header/board.png" alt="Лодка"></div><a class="supermenu__title" href="board-akb">Лодочные аккумуляторы<span class="fa"></span></a>
+                          <div class="supermenu__collapse">
+                            <p>(По ёмкости, А•ч)</p>
+                            <ul>
+                              <li><a href="board-akb/cap/120">120</a></li>
+                              <li><a href="board-akb/cap/132">132</a></li>
+                              <li><a href="board-akb/cap/135">135</a></li>
+                              <li><a href="board-akb/cap/140">140</a></li>
+                              <li><a href="board-akb/cap/145">145</a></li>
+                              <li><a href="board-akb/cap/150">150</a></li>
+                              <li><a href="board-akb/cap/180">180</a></li>
+                              <li><a href="board-akb/cap/190">190</a></li>
+                              <li><a href="board-akb/cap/225">225</a></li>
+                              <li><a href="board-akb/cap/230">230</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div>
+                          <div class="supermenu__img"><img src="/img/header/ups.png" alt="ИБП"></div><a class="supermenu__title" href="ups-akb">Аккумуляторы для ИБП<span class="fa"></span></a>
+                          <div class="supermenu__collapse">
+                            <p>(По ёмкости, А•ч)</p>
+                            <ul>
+                              <li><a href="ups-akb/cap/120">120</a></li>
+                              <li><a href="ups-akb/cap/132">132</a></li>
+                              <li><a href="ups-akb/cap/135">135</a></li>
+                              <li><a href="ups-akb/cap/140">140</a></li>
+                              <li><a href="ups-akb/cap/145">145</a></li>
+                              <li><a href="ups-akb/cap/150">150</a></li>
+                              <li><a href="ups-akb/cap/180">180</a></li>
+                              <li><a href="ups-akb/cap/190">190</a></li>
+                              <li><a href="ups-akb/cap/225">225</a></li>
+                              <li><a href="ups-akb/cap/230">230</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+                  <li class="navbar__item"><a class="navbar__link" href="vykup">Выкуп аккумуляторов</a>
+                    <div class="navbar__popup-menu">
+                      <ul>
+                        <li><a href="#">Доставка аккумуляторов</a></li>
+                        <li><a href="#">Установка на авто</a></li>
+                        <li><a href="#">Установка на авто</a></li>
+                        <li><a href="#">Обмен старого на новый</a></li>
+                        <li><a href="#">Зарядка</a></li>
+                        <li><a href="#">Вывоз и покупка старых</a></li>
+                        <li><a href="#">Вывоз и покупка любых свинцовых отходов</a></li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="navbar__item"><a class="navbar__link" href="info">Информация для клиентов</a>
+                    <div class="navbar__popup-menu">
+                      <ul>
+                        <li><a href="#">Доставка аккумуляторов</a></li>
+                        <li><a href="#">Установка на авто</a></li>
+                        <li><a href="#">Установка на авто</a></li>
+                        <li><a href="#">Обмен старого на новый</a></li>
+                        <li><a href="#">Зарядка</a></li>
+                        <li><a href="#">Вывоз и покупка старых</a></li>
+                        <li><a href="#">Вывоз и покупка любых свинцовых отходов</a></li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="navbar__item" id="headerMenuServices"><a class="navbar__link" href="uslugi">Услуги</a>
+                    <div class="navbar__popup-menu">
+                      <ul>
+                        <li><a href="#">Доставка аккумуляторов</a></li>
+                        <li><a href="#">Установка на авто</a></li>
+                        <li><a href="#">Установка на авто</a></li>
+                        <li><a href="#">Обмен старого на новый</a></li>
+                        <li><a href="#">Зарядка</a></li>
+                        <li><a href="#">Вывоз и покупка старых</a></li>
+                        <li><a href="#">Вывоз и покупка любых свинцовых отходов</a></li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="navbar__item" id="headerMenuContacts"><a class="navbar__link" href="contacty">Контакты</a>
+                    <div class="navbar__popup-menu">
+                      <ul>
+                        <li><a href="#">Доставка аккумуляторов</a></li>
+                        <li><a href="#">Установка на авто</a></li>
+                        <li><a href="#">Установка на авто</a></li>
+                        <li><a href="#">Обмен старого на новый</a></li>
+                        <li><a href="#">Зарядка</a></li>
+                        <li><a href="#">Вывоз и покупка старых</a></li>
+                        <li><a href="#">Вывоз и покупка любых свинцовых отходов</a></li>
+                      </ul>
+                    </div>
+                  </li>
+              <li class="navbar__item compare-header"> <a class="navbar__link" href="/pages/compare-page.html">
+                  <div><span></span><small style="display:none">0</small></div></a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <div class="container">
+      <p>Тут просто место для хлебных крошечек...</p>
+    </div>
+    <main>
+      <article class="product-page">
+        <div class="container">
+          <div class="row">
+            <div class="product-page__img">
+              <button class="compare-icon" title="Сравнение"><span class="compare-icon__wrapper"><span></span><span></span></span></button><img src="/img/product-page/product-img.png" alt="Аккумулятор">
+            </div>
+            <div class="product-page__desc product-desc">
+              <h2 class="title">Автомобильный аккумулятор скат 60R 500A (242x175x190)</h2><small class="product-desc__code">Артикул: 12457</small><b class="product-desc__price">1 550 руб.</b>
+              <div class="product-desc__trade">
+                <div class="product-desc__trade-banner">
+                  <div><img src="/img/product-page/trade.svg" alt="Значок аккумулятора"></div><b>Сдать старые аккумуляторы и получить скидку</b>
+                  <button title="Подробнее">?</button>
+                </div>
+                <div class="product-desc__trade-modal">
+                  <div class="row">
+                    <button class="btn-i show" data-toggle="12V" disabled="disabled">Напряжение 12В</button>
+                    <button class="btn-i" data-toggle="6V">Напряжение 6В</button>
+                  </div>
+                  <ul class="show" data-toggle="12V">
+                    <li><span>Емкость АКБ</span><span>Скидка</span></li>
+                          <li><span>$var-cap А/ч</span><span>$var-price</span></li>
+                          <li><span>$var-cap А/ч</span><span>$var-price</span></li>
+                          <li><span>$var-cap А/ч</span><span>$var-price</span></li>
+                          <li><span>$var-cap А/ч</span><span>$var-price</span></li>
+                          <li><span>$var-cap А/ч</span><span>$var-price</span></li>
+                          <li><span>$var-cap А/ч</span><span>$var-price</span></li>
+                          <li><span>$var-cap А/ч</span><span>$var-price</span></li>
+                          <li><span>$var-cap А/ч</span><span>$var-price</span></li>
+                          <li><span>$var-cap А/ч</span><span>$var-price</span></li>
+                          <li><span>$var-cap А/ч</span><span>$var-price</span></li>
+                  </ul>
+                  <ul data-toggle="6V" style="display:none">
+                    <li><span>Емкость АКБ</span><span>Скидка</span></li>
+                          <li><span>$var-cap2 А/ч</span><span>$var-price2</span></li>
+                          <li><span>$var-cap2 А/ч</span><span>$var-price2</span></li>
+                          <li><span>$var-cap2 А/ч</span><span>$var-price2</span></li>
+                          <li><span>$var-cap2 А/ч</span><span>$var-price2</span></li>
+                          <li><span>$var-cap2 А/ч</span><span>$var-price2</span></li>
+                          <li><span>$var-cap2 А/ч</span><span>$var-price2</span></li>
+                          <li><span>$var-cap2 А/ч</span><span>$var-price2</span></li>
+                          <li><span>$var-cap2 А/ч</span><span>$var-price2</span></li>
+                          <li><span>$var-cap2 А/ч</span><span>$var-price2</span></li>
+                          <li><span>$var-cap2 А/ч</span><span>$var-price2</span></li>
+                  </ul>
+                  <button class="btn-close" title="Закрыть"></button>
+                </div>
+              </div><small class="product-desc__quantity">В наличии (более 5 шт.)</small><a class="product-desc__compare" href="sravnenie">
+                <div class="compare-icon" title="Сравнение"><span class="compare-icon__wrapper"><span></span><span></span></span></div>
+                <p>Сравнить товары</p></a>
+              <div class="product-desc__btns">
+                <button class="btn">Добавить в корзину</button>
+                <button class="btn-i">Купить в 1 клик</button>
+              </div>
+              <div class="product-desc__list">
+                <ul>
+                        <li><b>Емкость, А/ч</b>
+                          <p>60</p>
+                        </li>
+                        <li><b>Вес, кг</b>
+                          <p>13.3</p>
+                        </li>
+                        <li><b>Страна</b>
+                          <p>Россия</p>
+                        </li>
+                        <li><b>Обслуживание АКБ</b>
+                          <p>Обслуживаемый</p>
+                        </li>
+                        <li><b>Пусковой ток, А</b>
+                          <p>500</p>
+                        </li>
+                        <li><b>Полярность</b>
+                          <p>Обратная,	есть и прямая</p>
+                        </li>
+                        <li><b>Типоразмер, мм</b>
+                          <p>242x175x190</p>
+                        </li>
+                        <li><b>Гарантия производителя, мес.</b>
+                          <p>6</p>
+                        </li>
+                        <li><b>Технология</b>
+                          <p>Sb/Sb (малосурмянистые)</p>
+                        </li>
+                        <li><b>Модель</b>
+                          <p>60 R+</p>
+                        </li>
+                        <li><b>Назначение</b>
+                          <p>Автомобильный</p>
+                        </li>
+                        <li><b>Тип корпуса</b>
+                          <p>L2</p>
+                        </li>
+                        <li><b>Тип крепления</b>
+                          <p>B13 - Нижнее (4 борта, 10,5 мм, 5 и 3 паза)</p>
+                        </li>
+                        <li><b>Тип крышки</b>
+                          <p>SL (EURO) - Клеммы утоплены заподлицо (отступ 15 мм)</p>
+                        </li>
+                        <li><b>Тип клемм</b>
+                          <p>A - Конус стандартный Ø19,5/17,9 (EURO)</p>
+                        </li>
+                        <li><b>Тип ручки</b>
+                          <p>IHL (Жесткий пластик)</p>
+                        </li>
+                        <li><b>Производитель</b>
+                          <p>АО “Электроисточник”</p>
+                        </li>
+                        <li><b>Бренд</b>
+                          <p>Скат</p>
+                        </li>
+                        <li><b>Длина, мм</b>
+                          <p>242</p>
+                        </li>
+                        <li><b>Ширина, мм</b>
+                          <p>175</p>
+                        </li>
+                        <li><b>Высота, мм</b>
+                          <p>190</p>
+                        </li>
+                        <li><b>Газоотвод</b>
+                          <p>Центральный &quot;Kamina&quot; (сбоку)</p>
+                        </li>
+                        <li><b>Технологическое исполнение</b>
+                          <p>SMF - Герметизированный необслуживаемый</p>
+                        </li>
+                        <li><b>Напряжение, В</b>
+                          <p>12</p>
+                        </li>
+                </ul>
+              </div>
+              <button class="product-desc__more">Все характеристики<span class="fa"></span></button>
+            </div>
+          </div>
+        </div>
+      </article>
+    </main>
+    <section class="same-akb">
+      <div class="container">
+        <div class="same-akb__swiper">
+          <h2 class="title">Аналогичные аккумуляторы</h2>
+          <div class="row swiper-container default-swiper">
+            <div class="same-akb__swiper-header"></div>
+            <button class="swiper-button-prev"></button>
+            <div class="swiper-wrapper">
+                  <div class="card swiper-slide">
+                    <div class="card__header"><small>1000</small>
+                      <button class="compare-icon" title="Сравнение"><span class="compare-icon__wrapper"><span></span><span></span></span></button>
+                    </div><a class="card__img" href="/pages/product-page.html"><img src="/img/catalog/1.png" alt="Аккумулятор"></a><b class="card__title">Аккумулятор ATOM 60 A.ч Обратная полярность.</b><b class="card__custom">Под заказ</b>
+                    <ul class="card__stats">
+                      <li data-cap>60</li>
+                      <li data-curr>450</li>
+                      <li data-polar>Обратная [- +]</li>
+                      <li data-size>242×175×190</li>
+                      <li data-vendor>25000</li>
+                    </ul>
+                    <div class="card__footer">
+                      <div class="card__footer-left">
+                        <div class="card__stock" data-quantity="5"><span class="fa"></span><small>В наличии</small></div><b>2300</b>
+                      </div>
+                      <div class="card__footer-right">
+                        <button data-dec>-</button><span>1</span>
+                        <button data-inc>+</button>
+                      </div>
+                    </div>
+                    <button class="btn">Заказать</button>
+                  </div>
+                  <div class="card swiper-slide">
+                    <div class="card__header"><small>2000</small>
+                      <button class="compare-icon" title="Сравнение"><span class="compare-icon__wrapper"><span></span><span></span></span></button>
+                    </div><a class="card__img" href="/pages/product-page.html"><img src="/img/catalog/2.png" alt="Аккумулятор"></a><b class="card__title">Аккумулятор SMART Element 65 А.ч Обратная полярность</b><b class="card__custom"></b>
+                    <ul class="card__stats">
+                      <li data-cap>65</li>
+                      <li data-curr>400</li>
+                      <li data-polar>Обратная [- +]</li>
+                      <li data-size>250×175×200</li>
+                      <li data-vendor>26000</li>
+                    </ul>
+                    <div class="card__footer">
+                      <div class="card__footer-left">
+                        <div class="card__stock" data-quantity="3"><span class="fa"></span><small>В наличии</small></div><b>2000</b>
+                      </div>
+                      <div class="card__footer-right">
+                        <button data-dec>-</button><span>1</span>
+                        <button data-inc>+</button>
+                      </div>
+                    </div>
+                    <button class="btn">Заказать</button>
+                  </div>
+                  <div class="card swiper-slide">
+                    <div class="card__header"><small>2000</small>
+                      <button class="compare-icon" title="Сравнение"><span class="compare-icon__wrapper"><span></span><span></span></span></button>
+                    </div><a class="card__img" href="/pages/product-page.html"><img src="/img/catalog/2.png" alt="Аккумулятор"></a><b class="card__title">Аккумулятор SMART Element 65 А.ч Обратная полярность</b><b class="card__custom"></b>
+                    <ul class="card__stats">
+                      <li data-cap>65</li>
+                      <li data-curr>400</li>
+                      <li data-polar>Обратная [- +]</li>
+                      <li data-size>250×175×200</li>
+                      <li data-vendor>26000</li>
+                    </ul>
+                    <div class="card__footer">
+                      <div class="card__footer-left">
+                        <div class="card__stock" data-quantity="3"><span class="fa"></span><small>В наличии</small></div><b>2000</b>
+                      </div>
+                      <div class="card__footer-right">
+                        <button data-dec>-</button><span>1</span>
+                        <button data-inc>+</button>
+                      </div>
+                    </div>
+                    <button class="btn">Заказать</button>
+                  </div>
+                  <div class="card swiper-slide">
+                    <div class="card__header"><small>3000</small>
+                      <button class="compare-icon" title="Сравнение"><span class="compare-icon__wrapper"><span></span><span></span></span></button>
+                    </div><a class="card__img" href="/pages/product-page.html"><img src="/img/catalog/3.png" alt="Аккумулятор"></a><b class="card__title">Аккумулятор ATOM 60 A.ч Обратная полярность.</b><b class="card__custom">Под заказ</b>
+                    <ul class="card__stats">
+                      <li data-cap>70</li>
+                      <li data-curr>500</li>
+                      <li data-polar>Обратная [- +]</li>
+                      <li data-size>300×200×100</li>
+                      <li data-vendor>27000</li>
+                    </ul>
+                    <div class="card__footer">
+                      <div class="card__footer-left">
+                        <div class="card__stock" data-quantity="1"><span class="fa"></span><small>В наличии</small></div><b>1000</b>
+                      </div>
+                      <div class="card__footer-right">
+                        <button data-dec>-</button><span>1</span>
+                        <button data-inc>+</button>
+                      </div>
+                    </div>
+                    <button class="btn">Заказать</button>
+                  </div>
+                  <div class="card swiper-slide">
+                    <div class="card__header"><small>4000</small>
+                      <button class="compare-icon" title="Сравнение"><span class="compare-icon__wrapper"><span></span><span></span></span></button>
+                    </div><a class="card__img" href="/pages/product-page.html"><img src="/img/catalog/1.png" alt="Аккумулятор"></a><b class="card__title">Аккумуляторный аккумулятор аккумулятора Вакуумная Биполярочка</b><b class="card__custom">Под заказ, но кому?</b>
+                    <ul class="card__stats">
+                      <li data-cap>100</li>
+                      <li data-curr>500</li>
+                      <li data-polar>Биполярочка [+ +]</li>
+                      <li data-size>666×333×111</li>
+                      <li data-vendor>28000</li>
+                    </ul>
+                    <div class="card__footer">
+                      <div class="card__footer-left">
+                        <div class="card__stock" data-quantity="4"><span class="fa"></span><small>В наличии</small></div><b>10000</b>
+                      </div>
+                      <div class="card__footer-right">
+                        <button data-dec>-</button><span>1</span>
+                        <button data-inc>+</button>
+                      </div>
+                    </div>
+                    <button class="btn">Заказать</button>
+                  </div>
+                  <div class="card swiper-slide">
+                    <div class="card__header"><small>5000</small>
+                      <button class="compare-icon" title="Сравнение"><span class="compare-icon__wrapper"><span></span><span></span></span></button>
+                    </div><a class="card__img" href="/pages/product-page.html"><img src="/img/catalog/2.png" alt="Аккумулятор"></a><b class="card__title">Отрицательный аккумулятор холодный Недавака</b><b class="card__custom"></b>
+                    <ul class="card__stats">
+                      <li data-cap>0</li>
+                      <li data-curr>0</li>
+                      <li data-polar>Заминусовали [-_-]</li>
+                      <li data-size>1×1×1</li>
+                      <li data-vendor>29000</li>
+                    </ul>
+                    <div class="card__footer">
+                      <div class="card__footer-left">
+                        <div class="card__stock" data-quantity="0"><span class="fa"></span><small>В наличии</small></div><b>100</b>
+                      </div>
+                      <div class="card__footer-right">
+                        <button data-dec>-</button><span>1</span>
+                        <button data-inc>+</button>
+                      </div>
+                    </div>
+                    <button class="btn">Заказать</button>
+                  </div>
+                  <div class="card swiper-slide">
+                    <div class="card__header"><small>5000</small>
+                      <button class="compare-icon" title="Сравнение"><span class="compare-icon__wrapper"><span></span><span></span></span></button>
+                    </div><a class="card__img" href="/pages/product-page.html"><img src="/img/catalog/2.png" alt="Аккумулятор"></a><b class="card__title">Отрицательный аккумулятор холодный Недавака</b><b class="card__custom"></b>
+                    <ul class="card__stats">
+                      <li data-cap>0</li>
+                      <li data-curr>0</li>
+                      <li data-polar>Заминусовали [-_-]</li>
+                      <li data-size>1×1×1</li>
+                      <li data-vendor>29000</li>
+                    </ul>
+                    <div class="card__footer">
+                      <div class="card__footer-left">
+                        <div class="card__stock" data-quantity="0"><span class="fa"></span><small>В наличии</small></div><b>100</b>
+                      </div>
+                      <div class="card__footer-right">
+                        <button data-dec>-</button><span>1</span>
+                        <button data-inc>+</button>
+                      </div>
+                    </div>
+                    <button class="btn">Заказать</button>
+                  </div>
+                  <div class="card swiper-slide">
+                    <div class="card__header"><small>1000</small>
+                      <button class="compare-icon" title="Сравнение"><span class="compare-icon__wrapper"><span></span><span></span></span></button>
+                    </div><a class="card__img" href="/pages/product-page.html"><img src="/img/catalog/1.png" alt="Аккумулятор"></a><b class="card__title">Аккумулятор ATOM 60 A.ч Обратная полярность.</b><b class="card__custom">Под заказ</b>
+                    <ul class="card__stats">
+                      <li data-cap>60</li>
+                      <li data-curr>450</li>
+                      <li data-polar>Обратная [- +]</li>
+                      <li data-size>242×175×190</li>
+                      <li data-vendor>25000</li>
+                    </ul>
+                    <div class="card__footer">
+                      <div class="card__footer-left">
+                        <div class="card__stock" data-quantity="5"><span class="fa"></span><small>В наличии</small></div><b>2300</b>
+                      </div>
+                      <div class="card__footer-right">
+                        <button data-dec>-</button><span>1</span>
+                        <button data-inc>+</button>
+                      </div>
+                    </div>
+                    <button class="btn">Заказать</button>
+                  </div>
+            </div>
+            <button class="swiper-button-next"></button>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+        <div class="same-akb__swiper">
+          <h2 class="title">Вы недавно смотрели</h2>
+          <div class="row swiper-container default-swiper">
+            <div class="same-akb__swiper-header"></div>
+            <button class="swiper-button-prev"></button>
+            <div class="swiper-wrapper">
+                  <div class="card swiper-slide">
+                    <div class="card__header"><small>1000</small>
+                      <button class="compare-icon" title="Сравнение"><span class="compare-icon__wrapper"><span></span><span></span></span></button>
+                    </div><a class="card__img" href="/pages/product-page.html"><img src="/img/catalog/1.png" alt="Аккумулятор"></a><b class="card__title">Аккумулятор ATOM 60 A.ч Обратная полярность.</b><b class="card__custom">Под заказ</b>
+                    <ul class="card__stats">
+                      <li data-cap>60</li>
+                      <li data-curr>450</li>
+                      <li data-polar>Обратная [- +]</li>
+                      <li data-size>242×175×190</li>
+                      <li data-vendor>25000</li>
+                    </ul>
+                    <div class="card__footer">
+                      <div class="card__footer-left">
+                        <div class="card__stock" data-quantity="5"><span class="fa"></span><small>В наличии</small></div><b>2300</b>
+                      </div>
+                      <div class="card__footer-right">
+                        <button data-dec>-</button><span>1</span>
+                        <button data-inc>+</button>
+                      </div>
+                    </div>
+                    <button class="btn">Заказать</button>
+                  </div>
+                  <div class="card swiper-slide">
+                    <div class="card__header"><small>2000</small>
+                      <button class="compare-icon" title="Сравнение"><span class="compare-icon__wrapper"><span></span><span></span></span></button>
+                    </div><a class="card__img" href="/pages/product-page.html"><img src="/img/catalog/2.png" alt="Аккумулятор"></a><b class="card__title">Аккумулятор SMART Element 65 А.ч Обратная полярность</b><b class="card__custom"></b>
+                    <ul class="card__stats">
+                      <li data-cap>65</li>
+                      <li data-curr>400</li>
+                      <li data-polar>Обратная [- +]</li>
+                      <li data-size>250×175×200</li>
+                      <li data-vendor>26000</li>
+                    </ul>
+                    <div class="card__footer">
+                      <div class="card__footer-left">
+                        <div class="card__stock" data-quantity="3"><span class="fa"></span><small>В наличии</small></div><b>2000</b>
+                      </div>
+                      <div class="card__footer-right">
+                        <button data-dec>-</button><span>1</span>
+                        <button data-inc>+</button>
+                      </div>
+                    </div>
+                    <button class="btn">Заказать</button>
+                  </div>
+                  <div class="card swiper-slide">
+                    <div class="card__header"><small>2000</small>
+                      <button class="compare-icon" title="Сравнение"><span class="compare-icon__wrapper"><span></span><span></span></span></button>
+                    </div><a class="card__img" href="/pages/product-page.html"><img src="/img/catalog/2.png" alt="Аккумулятор"></a><b class="card__title">Аккумулятор SMART Element 65 А.ч Обратная полярность</b><b class="card__custom"></b>
+                    <ul class="card__stats">
+                      <li data-cap>65</li>
+                      <li data-curr>400</li>
+                      <li data-polar>Обратная [- +]</li>
+                      <li data-size>250×175×200</li>
+                      <li data-vendor>26000</li>
+                    </ul>
+                    <div class="card__footer">
+                      <div class="card__footer-left">
+                        <div class="card__stock" data-quantity="3"><span class="fa"></span><small>В наличии</small></div><b>2000</b>
+                      </div>
+                      <div class="card__footer-right">
+                        <button data-dec>-</button><span>1</span>
+                        <button data-inc>+</button>
+                      </div>
+                    </div>
+                    <button class="btn">Заказать</button>
+                  </div>
+                  <div class="card swiper-slide">
+                    <div class="card__header"><small>3000</small>
+                      <button class="compare-icon" title="Сравнение"><span class="compare-icon__wrapper"><span></span><span></span></span></button>
+                    </div><a class="card__img" href="/pages/product-page.html"><img src="/img/catalog/3.png" alt="Аккумулятор"></a><b class="card__title">Аккумулятор ATOM 60 A.ч Обратная полярность.</b><b class="card__custom">Под заказ</b>
+                    <ul class="card__stats">
+                      <li data-cap>70</li>
+                      <li data-curr>500</li>
+                      <li data-polar>Обратная [- +]</li>
+                      <li data-size>300×200×100</li>
+                      <li data-vendor>27000</li>
+                    </ul>
+                    <div class="card__footer">
+                      <div class="card__footer-left">
+                        <div class="card__stock" data-quantity="1"><span class="fa"></span><small>В наличии</small></div><b>1000</b>
+                      </div>
+                      <div class="card__footer-right">
+                        <button data-dec>-</button><span>1</span>
+                        <button data-inc>+</button>
+                      </div>
+                    </div>
+                    <button class="btn">Заказать</button>
+                  </div>
+                  <div class="card swiper-slide">
+                    <div class="card__header"><small>4000</small>
+                      <button class="compare-icon" title="Сравнение"><span class="compare-icon__wrapper"><span></span><span></span></span></button>
+                    </div><a class="card__img" href="/pages/product-page.html"><img src="/img/catalog/1.png" alt="Аккумулятор"></a><b class="card__title">Аккумуляторный аккумулятор аккумулятора Вакуумная Биполярочка</b><b class="card__custom">Под заказ, но кому?</b>
+                    <ul class="card__stats">
+                      <li data-cap>100</li>
+                      <li data-curr>500</li>
+                      <li data-polar>Биполярочка [+ +]</li>
+                      <li data-size>666×333×111</li>
+                      <li data-vendor>28000</li>
+                    </ul>
+                    <div class="card__footer">
+                      <div class="card__footer-left">
+                        <div class="card__stock" data-quantity="4"><span class="fa"></span><small>В наличии</small></div><b>10000</b>
+                      </div>
+                      <div class="card__footer-right">
+                        <button data-dec>-</button><span>1</span>
+                        <button data-inc>+</button>
+                      </div>
+                    </div>
+                    <button class="btn">Заказать</button>
+                  </div>
+                  <div class="card swiper-slide">
+                    <div class="card__header"><small>5000</small>
+                      <button class="compare-icon" title="Сравнение"><span class="compare-icon__wrapper"><span></span><span></span></span></button>
+                    </div><a class="card__img" href="/pages/product-page.html"><img src="/img/catalog/2.png" alt="Аккумулятор"></a><b class="card__title">Отрицательный аккумулятор холодный Недавака</b><b class="card__custom"></b>
+                    <ul class="card__stats">
+                      <li data-cap>0</li>
+                      <li data-curr>0</li>
+                      <li data-polar>Заминусовали [-_-]</li>
+                      <li data-size>1×1×1</li>
+                      <li data-vendor>29000</li>
+                    </ul>
+                    <div class="card__footer">
+                      <div class="card__footer-left">
+                        <div class="card__stock" data-quantity="0"><span class="fa"></span><small>В наличии</small></div><b>100</b>
+                      </div>
+                      <div class="card__footer-right">
+                        <button data-dec>-</button><span>1</span>
+                        <button data-inc>+</button>
+                      </div>
+                    </div>
+                    <button class="btn">Заказать</button>
+                  </div>
+                  <div class="card swiper-slide">
+                    <div class="card__header"><small>5000</small>
+                      <button class="compare-icon" title="Сравнение"><span class="compare-icon__wrapper"><span></span><span></span></span></button>
+                    </div><a class="card__img" href="/pages/product-page.html"><img src="/img/catalog/2.png" alt="Аккумулятор"></a><b class="card__title">Отрицательный аккумулятор холодный Недавака</b><b class="card__custom"></b>
+                    <ul class="card__stats">
+                      <li data-cap>0</li>
+                      <li data-curr>0</li>
+                      <li data-polar>Заминусовали [-_-]</li>
+                      <li data-size>1×1×1</li>
+                      <li data-vendor>29000</li>
+                    </ul>
+                    <div class="card__footer">
+                      <div class="card__footer-left">
+                        <div class="card__stock" data-quantity="0"><span class="fa"></span><small>В наличии</small></div><b>100</b>
+                      </div>
+                      <div class="card__footer-right">
+                        <button data-dec>-</button><span>1</span>
+                        <button data-inc>+</button>
+                      </div>
+                    </div>
+                    <button class="btn">Заказать</button>
+                  </div>
+                  <div class="card swiper-slide">
+                    <div class="card__header"><small>1000</small>
+                      <button class="compare-icon" title="Сравнение"><span class="compare-icon__wrapper"><span></span><span></span></span></button>
+                    </div><a class="card__img" href="/pages/product-page.html"><img src="/img/catalog/1.png" alt="Аккумулятор"></a><b class="card__title">Аккумулятор ATOM 60 A.ч Обратная полярность.</b><b class="card__custom">Под заказ</b>
+                    <ul class="card__stats">
+                      <li data-cap>60</li>
+                      <li data-curr>450</li>
+                      <li data-polar>Обратная [- +]</li>
+                      <li data-size>242×175×190</li>
+                      <li data-vendor>25000</li>
+                    </ul>
+                    <div class="card__footer">
+                      <div class="card__footer-left">
+                        <div class="card__stock" data-quantity="5"><span class="fa"></span><small>В наличии</small></div><b>2300</b>
+                      </div>
+                      <div class="card__footer-right">
+                        <button data-dec>-</button><span>1</span>
+                        <button data-inc>+</button>
+                      </div>
+                    </div>
+                    <button class="btn">Заказать</button>
+                  </div>
+            </div>
+            <button class="swiper-button-next"></button>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--Footer-->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__row row">
+          <div class="logo"><a class="logo__link" href="/"><img src="/img/footer/logo.png" alt="Лого"></a></div>
+          <nav class="footer__list">
+            <ul>
+              <li><a href="#">Каталог</a></li>
+              <li><a href="#">Выкуп аккумуляторов</a></li>
+              <li><a href="#">Информация для клиентов</a></li>
+              <li><a href="#">Услуги</a></li>
+              <li><a href="#">Контакты</a></li>
+            </ul>
+          </nav>
+          <div class="footer__right">
+            <div class="footer__contacts header__contacts"><a href="mailto:@akb-eco.ru"> <span class="fa"></span><span class="tdu">@akb-eco.ru</span></a><a href="tel:88000000000">8 (800) 000-00-00</a>
+              <button data-modal="call">Заказать звонок</button>
+            </div>
+            <div class="footer__copyright"><a href="personal">Политика конфиденциальности</a><a href="https://web2.ru" target="_blank">Студия Web2 – Создание и продвижение сайтов</a><small>© 2020 Akb-eco.ru. Все права защищены</small></div>
+          </div>
+        </div>
+      </div>
+      <button class="scroll-up"><span class="fa"></span></button>
+    </footer>
+    <script src="/js/main.min.js"></script>
+    <script src="/js/product.min.js"></script>
+    <script src="/js/vendor.min.js"></script>
+  </body>
+</html>

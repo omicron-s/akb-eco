@@ -1,0 +1,52 @@
+include ./../../layouts/mixins.pug
+section.selection
+  //Выбор марки транспорта
+  .selection-transport.container
+    .row
+      h2.selection-transport__title.title Подбор аккумуляторов по марке авто
+      .selection-transport__buttons
+        button.selection__btn-type(data-toggle="auto" disabled)
+          img(src="/img/select-transport/auto.svg" alt="Авто")
+        button.selection__btn-type(data-toggle="truck")
+          img(src="/img/select-transport/truck.svg" alt="Грузовик")
+        button.selection__btn-type(data-toggle="moto")
+          img(src="/img/select-transport/moto.svg" alt="Мото")
+        button.selection__btn-type(data-toggle="board")
+          img(src="/img/select-transport/board.svg" alt="Яхта")
+
+    .selection__grid
+      .selection__grid-row.row.active(data-toggle="auto")
+        -var auto = 1
+        while auto < 29
+          +selection-transport(auto, auto) 
+          - auto++
+      .selection__grid-row.row(data-toggle="truck" style="display:none")
+        -var truck = 1; name = 0;
+        while truck < 29
+          - name='truck' + truck + 1000;
+          +selection-transport(name, truck) 
+          - truck++
+      .selection__grid-row.row(data-toggle="moto" style="display:none")
+        -var moto = 1; name = 0;
+        while moto < 29
+          - name='мотоцикль ' + 100000;
+          +selection-transport(name, moto) 
+          - moto++
+      .selection__grid-row.row(data-toggle="board" style="display:none")
+        -var board = 1; name = 0;
+        while board < 29
+          - name= 'длинный текст' + board + 1000000;
+          +selection-transport(name, board) 
+          - board++
+      a(href="#").selection__btn.btn Все марки
+  //Выбор бренда аккумулятора
+  .selection-akb.container
+    .row
+      h2.selection-akb__title.title Подбор аккумуляторов по марке авто
+    .selection__grid
+      .selection__grid-row.row.active
+        -var akb = 1
+        while akb < 29
+          +selection-akb(akb, akb) 
+          - akb++
+      a(href="#").selection__btn.btn Все бренды

@@ -1,0 +1,51 @@
+.input-checkbox {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+
+  input {
+    z-index: -1;
+    &:checked + .input-checkbox__check::after {
+      width: 50%;
+      height: 50%;
+    }
+    &:hover + .input-checkbox__check, &:focus + .input-checkbox__check {
+      border-color: $hover;
+      background-color: rgba($hover, 0.3);
+    }
+    &:active + .input-checkbox__check {
+      border-color: $active;
+      background-color: rgba($active, 0.3);
+      transition: $transBtn;
+    }
+  }
+
+  //.input-checkbox__check
+  &__check {
+    display: block;
+    position: relative;
+    width: 16px;
+    height: 16px;
+    overflow: hidden;
+    border: 1px solid $cardBord;
+    transition: $trans;
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: calc(100% + 8px);
+      height: calc(100% + 8px);
+      transform: translate(-50%, -50%);
+      transition: $trans;
+      box-shadow: inset 0 0 0 4px $hover;
+    }
+  }
+
+  //.input-checkbox__text
+  &__text {
+    margin-left: 1em;
+    line-height: 1.15;
+  }
+}

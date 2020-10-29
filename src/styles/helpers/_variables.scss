@@ -1,0 +1,18 @@
+$hover: #88b337; //hover, button
+$active: #ffdc64; //button active
+$error: #ff0606;
+$headMenu: #e8e8ea; //headmenu color
+$select: #f8f8f9; //selection color
+$aside: #f6f6f6; //aside
+$disable: #eaebec; //disable color
+$cardBord: #e0e0e0; //card border color
+$cardGrayFont:#828282; //card gray font color
+$fz-title: 30px !default; //font-size title
+
+$p-sec: 40px 0 50px; //padding для секций
+$p-sec-sm: 20px 0 25px; //padding для секций
+
+$transTimer: .2s;
+$transFunc: ease-in-out;
+$trans: $transTimer $transFunc;
+$transBtn: 0.05s $transFunc;

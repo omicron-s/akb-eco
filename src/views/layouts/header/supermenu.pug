@@ -1,0 +1,116 @@
+.navbar__supermenu
+  .container
+    ul.supermenu
+      // Авто
+      li.supermenu__item
+        .supermenu__img
+          img(src="/img/header/auto.png" alt='Авто')
+        a.supermenu__title(href="auto-akb") Легковые аккумуляторы
+          span.fa 
+        .supermenu__collapse
+          p (По ёмкости, А•ч)
+          - var auto = 35;
+          ul
+            while auto < 115
+              li
+                a(href='auto-akb/cap/' + auto)=auto
+              - auto = auto + 5;
+          hr
+          a.supermenu__title(href="auto-akb/brand") По стране авто
+          p (Родина бренда)
+          ul
+            li
+              a(href="auto-akb/brand/japan") Японские авто
+              a(href="auto-akb/brand/korea") Корейские авто
+          hr
+          a.supermenu__title(href="auto-akb/category") По категории
+          ul
+            li
+              a(href="auto-akb/category/cheap") Недорогие
+              a(href="auto-akb/category/replace") Подменные
+      // Грузовые
+      li.supermenu__item
+        .supermenu__img
+          img(src="/img/header/truck.png" alt='Грузовик')
+        a.supermenu__title(href="truck-akb") Грузовые аккумуляторы
+          span.fa
+        .supermenu__collapse
+          p (По ёмкости, А•ч)
+          ul
+            each truck in [120, 132, 135, 140, 145, 150, 180, 190, 225, 230]
+              li
+                a(href='truck-akb/cap/' + truck)=truck
+          hr
+          a.supermenu__title(href="truck-akb/country") По стране АКБ
+          p (Страна производства)
+          ul
+            li
+              a(href="truck-akb/country/japan") Япония
+              a(href="truck-akb/country/russia") Россия
+              a(href="truck-akb/country/korea") Корея
+              a(href="truck-akb/country/austria") Австрия
+              a(href="truck-akb/country/ыlovenia") Словения
+              a(href="truck-akb/country/тurkey") Турция
+          hr
+          a.supermenu__title(href="truck-akb/technolgy") По категории
+          p (Изготовление)
+          ul
+            li
+              a(href="truck-akb/technolgy/agm") AGM
+              a(href="truck-akb/technolgy/efb") EFB
+      // Мото
+      li.supermenu__item
+        .supermenu__img
+          img(src="/img/header/moto.png" alt='Мото')
+        a.supermenu__title(href="moto-akb") Мото аккумуляторы
+          span.fa
+        .supermenu__collapse
+          p (По ёмкости, А•ч)
+          - var moto = 4;
+          ul
+            while moto < 22
+              li
+                a(href='moto-akb/cap/' + moto)=moto++
+            li
+              a(href='moto-akb/cap/24') 24
+            li
+              a(href='moto-akb/cap/30') 30
+          hr
+          a.supermenu__title(href="moto-akb/type") По виду техники
+          ul
+            li
+              a(href="moto-akb/type/moto") Для мотоциклов
+              a(href="moto-akb/type/scooter") Для скутеров
+              a(href="moto-akb/type/snowmobile") Для снегоходов
+              a(href="moto-akb/type/atv") Для квадроциклов
+          hr
+          a.supermenu__title(href="moto-akb/category") По категории
+          ul
+            li
+              a(href="moto-akb/category/agm") AGM
+              a(href="moto-akb/category/gel") GEL
+              a(href="moto-akb/category/dry") Сухозаряженные
+      // Лодочные и БП
+      li.supermenu__item#boardAndUps
+        div
+          .supermenu__img
+            img(src="/img/header/board.png" alt='Лодка')
+          a.supermenu__title(href="board-akb") Лодочные аккумуляторы
+            span.fa
+          .supermenu__collapse
+            p (По ёмкости, А•ч)
+            ul
+              each truck in [120, 132, 135, 140, 145, 150, 180, 190, 225, 230]
+                li
+                  a(href='board-akb/cap/' + truck)=truck
+        div
+          .supermenu__img
+            img(src="/img/header/ups.png" alt='ИБП')
+          a.supermenu__title(href="ups-akb") Аккумуляторы для ИБП
+            span.fa
+          .supermenu__collapse
+            p (По ёмкости, А•ч)
+            ul
+              each truck in [120, 132, 135, 140, 145, 150, 180, 190, 225, 230]
+                li
+                  a(href='ups-akb/cap/' + truck)=truck

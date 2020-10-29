@@ -1,0 +1,160 @@
+.catalog-page {
+  padding: 15px 0 40px;
+  >.container {
+    display: flex;
+  }
+}
+
+.catalog-aside {
+  min-width: 232px;
+  height: 100%;
+  border: 1px solid $cardBord;
+  background: $aside;
+  margin-right: 25px;
+  //catalog-aside__header
+  &__header {
+    padding: 15px;
+  }
+
+  //.catalog-aside__list
+  &__list {
+    >li {
+      margin: -1px;
+      border: 1px solid $cardBord;
+      padding: 15px;
+    }
+  }
+  // .catalog-aside__title
+  &__title {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+
+    small {
+      display: flex;
+      flex: 0 0 18px;
+      align-items: center;
+      justify-content: center;
+      width: 18px;
+      height: 18px;
+      border: 1px solid $cardBord;
+      margin-left: 20px;
+      border-radius: 50%;
+      background-color: #fff;
+      font-weight: 700;
+      cursor: pointer;
+    }
+  }
+  // .catalog-aside__input
+  &__input {
+    display: flex;
+    margin-bottom: 10px;
+    input {
+      width: 90px;
+      padding: 8px 0;
+      text-align: center;
+      &::placeholder {
+        color: #c4c4c4;
+        text-align: center;
+      }
+    }
+    span {
+      display: block;
+      width: 10px;
+      height: 1px;
+      margin: auto 5px;
+      background-color: #375e6e;
+    }
+  }
+  // .catalog-aside__range
+  &__range {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  &__checkbox {
+    li {
+      margin: 10px 0;
+    }
+  }
+}
+
+.slider-range {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 8px;
+  margin: 15px 0;
+  background-color: $hover;
+  //.slider-range__handler
+  &__handler {
+    position: relative;
+    width: 10px;
+    height: 20px;
+    border: 3px solid $cardBord;
+    background-color: #fff;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 1px;
+      width: 2px;
+      height: 100%;
+      background-color: $cardBord;
+    }
+
+    &:hover {
+      border-color: $active;
+      box-shadow: 0 0 0 1px #000;
+      z-index: 1;
+      background-color: #000;
+      &::after {
+        background-color: $active;
+      }
+    }
+  }
+}
+
+.catalog-main {
+  width: 80%;
+  // .catalog-main__section
+  &__section {
+
+    .title {
+    }
+  }
+
+  // .catalog-main__grid
+  &__grid {
+    display: flex;
+    margin-bottom: 50px;
+
+    .card {
+      // height: unset;
+      flex: 1 1 258px;
+      margin: 0 -1px -1px 0;
+    }
+  }
+
+  //.catalog-main__desc
+  &__desc {
+    margin-bottom: 50px;
+  }
+
+  // .catalog-main__pagination
+  &__pagination {
+    display: flex;
+    button {
+      margin: 0 5px;
+    }
+  }
+}
+
+
+
+
+
+
+  

@@ -1,0 +1,66 @@
+include ./../mixins
+//header
+header.header
+	.container
+		.header__row
+			.header__minimenu
+				button.header__burger
+					span
+				.logo
+					a.logo__link(href="/")
+						picture
+							source(media="(max-width: 767.98px)" srcset="/img/header/logo-sm.png" )
+							source(srcset="/img/header/logo.png" )
+							img(src="/img/header/logo.png" alt="Лого")
+				a(href="tel:88000000000")
+					span.fa
+				.navbar__item.compare-header 
+					a.navbar__link(href='sravnenie')
+						div
+							span
+							small(style="display:none") 0
+			.row
+				+input-search('header__search')
+				.search-block
+					.search-block__wrapper
+						.search-block__content
+							ul
+								-var n=1;
+								while n < 10
+									li
+										a(href=n++)
+											div
+												img(src="/img/header/test.png" alt='Товар')
+											p Название продукции в одну или две строки... Название продукции в одну или две строки
+					.search-block__fixed
+						a(href="catalog")
+							|Все товары
+							span.fa
+				.header__contacts
+					a(href="mailto:@akb-eco.ru") 
+						span.fa
+						span.tdu @akb-eco.ru
+					a(href="tel:88000000000") 8 (800) 000-00-00
+					button(data-modal='call') Заказать звонок
+	//Навбар - меню
+	.navbar
+		.container
+			nav.navbar__menu
+				ul.navbar__list
+					li.navbar__item#superMenu
+						a.navbar__link(href='')
+							span
+							|Каталог
+						//Суперменю
+						include ./supermenu
+					+navbar-menu('vykup','Выкуп аккумуляторов')
+					+navbar-menu('info','Информация для клиентов')
+					+navbar-menu('uslugi','Услуги','headerMenuServices')
+					+navbar-menu('contacty','Контакты','headerMenuContacts')
+					li.navbar__item.compare-header 
+						a.navbar__link(href='/pages/compare-page.html')
+							div
+								span
+								small(style="display:none") 0
+
+

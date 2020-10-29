@@ -1,0 +1,98 @@
+mixin list-item(bold, text)
+  li
+    b=bold
+    p=text
+
+mixin trade-item(cap, price)
+  li
+    span=cap
+    span=price
+
+article.product-page
+  .container
+    .row
+      .product-page__img
+        include ./../../components/compare-icon/compare-icon
+        img(src="/img/product-page/product-img.png" alt="Аккумулятор")
+      .product-page__desc.product-desc
+        h2.title Автомобильный аккумулятор скат 60R 500A (242x175x190)
+        small.product-desc__code Артикул: 12457
+        b.product-desc__price 1 550 руб.
+        .product-desc__trade
+          .product-desc__trade-banner
+            div
+              img(src="/img/product-page/trade.svg" alt="Значок аккумулятора")
+            b Сдать старые аккумуляторы и получить скидку
+            button(title="Подробнее") ?
+          .product-desc__trade-modal
+            .row
+              button.btn-i.show(data-toggle='12V' disabled='disabled') Напряжение 12В
+              button.btn-i(data-toggle='6V') Напряжение 6В
+            ul.show(data-toggle="12V")
+              li
+                span Емкость АКБ
+                span Скидка
+              +trade-item('$var-cap А/ч',"$var-price")
+              +trade-item('$var-cap А/ч',"$var-price")
+              +trade-item('$var-cap А/ч',"$var-price")
+              +trade-item('$var-cap А/ч',"$var-price")
+              +trade-item('$var-cap А/ч',"$var-price")
+              +trade-item('$var-cap А/ч',"$var-price")
+              +trade-item('$var-cap А/ч',"$var-price")
+              +trade-item('$var-cap А/ч',"$var-price")
+              +trade-item('$var-cap А/ч',"$var-price")
+              +trade-item('$var-cap А/ч',"$var-price")
+            ul(data-toggle="6V" style="display:none")
+              li
+                span Емкость АКБ
+                span Скидка
+              +trade-item('$var-cap2 А/ч',"$var-price2")
+              +trade-item('$var-cap2 А/ч',"$var-price2")
+              +trade-item('$var-cap2 А/ч',"$var-price2")
+              +trade-item('$var-cap2 А/ч',"$var-price2")
+              +trade-item('$var-cap2 А/ч',"$var-price2")
+              +trade-item('$var-cap2 А/ч',"$var-price2")
+              +trade-item('$var-cap2 А/ч',"$var-price2")
+              +trade-item('$var-cap2 А/ч',"$var-price2")
+              +trade-item('$var-cap2 А/ч',"$var-price2")
+              +trade-item('$var-cap2 А/ч',"$var-price2")              
+            button.btn-close(title="Закрыть")
+        small.product-desc__quantity В наличии (более 5 шт.)
+        a.product-desc__compare(href="sravnenie")
+          .compare-icon(data-compare=false title="Сравнение")
+            span.compare-icon__wrapper
+              span
+              span
+          p Сравнить товары
+        .product-desc__btns
+          button.btn Добавить в корзину
+          button.btn-i Купить в 1 клик
+        .product-desc__list
+          ul
+            +list-item('Емкость, А/ч', '60')
+            +list-item('Вес, кг', '13.3')
+            +list-item('Страна', 'Россия')
+            +list-item('Обслуживание АКБ', 'Обслуживаемый')
+            +list-item('Пусковой ток, А', '500')
+            +list-item('Полярность', 'Обратная,	есть и прямая')
+            +list-item('Типоразмер, мм', '242x175x190')
+            +list-item('Гарантия производителя, мес.', '6')
+            +list-item('Технология', 'Sb/Sb (малосурмянистые)')
+            +list-item('Модель', '60 R+')
+            +list-item('Назначение', 'Автомобильный')
+            +list-item('Тип корпуса', 'L2')
+            +list-item('Тип крепления', 'B13 - Нижнее (4 борта, 10,5 мм, 5 и 3 паза)')
+            +list-item('Тип крышки', 'SL (EURO) - Клеммы утоплены заподлицо (отступ 15 мм)')
+            +list-item('Тип клемм', 'A - Конус стандартный Ø19,5/17,9 (EURO)')
+            +list-item('Тип ручки', 'IHL (Жесткий пластик)')
+            +list-item('Производитель', 'АО “Электроисточник”')
+            +list-item('Бренд', 'Скат')
+            +list-item('Длина, мм', '242')
+            +list-item('Ширина, мм', '175')
+            +list-item('Высота, мм', '190')
+            +list-item('Газоотвод', 'Центральный "Kamina" (сбоку)')
+            +list-item('Технологическое исполнение', 'SMF - Герметизированный необслуживаемый')
+            +list-item('Напряжение, В', '12')
+        button.product-desc__more
+          |Все характеристики
+          span.fa

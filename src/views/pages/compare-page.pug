@@ -1,0 +1,14 @@
+extends ../layouts/default
+
+block variables
+	- const title = "Сравнение товаров";
+
+block content
+	.container
+		p Тут просто место для хлебных крошечек...
+	main
+		include ../blocks/compare-page/compare-page
+block scripts
+	script(src="/js/main.js")
+	script(src="/js/compare.js")
+	script(src="/js/vendor.js")

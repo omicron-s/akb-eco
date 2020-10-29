@@ -1,0 +1,9 @@
+mixin selection-transport(link="#", img)
+  a.selection__link(href="/pages/catalog.html")
+    img(src='img/auto-brand/1_(' + img + ').png' alt=link)
+    p=link
+
+mixin selection-akb(link="#", img)
+  a.selection__link(href=img)
+    img(src='img/akb-brand/1_(' + img + ').png' alt=link)
+    p=link

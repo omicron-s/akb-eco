@@ -1,0 +1,64 @@
+.akb-select {
+  @include max-767 {
+    padding: $p-sec-sm;
+  }
+  background-color: #e5e5e5;
+  padding: $p-sec;
+
+  // .akb-select__row
+  &__row {
+    @include max-767 {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 15px;
+      >ul {
+        li:not(:last-child) {
+          margin-right: 15px;
+        }
+      }
+    }
+    margin-bottom: 30px;
+    >ul {
+      display: flex;
+      li:not(:last-child) {
+        margin-right: 30px;
+      }
+    }
+  }
+
+  // .akb-select__swiper
+  &__swiper {
+    justify-content: center;
+    opacity: 0;
+    /* Для красивой тени отступы сверху и снизу */
+    margin: -30px 0;
+    &.active {
+      opacity: 1;
+    }
+  }
+
+  // .akb-select__btn
+  &__btn {
+
+    @include max-767 {
+      font-size: 16px;
+    }
+    font-weight: 500;
+    font-size: 20px;
+    padding: 10px 0;
+    border-bottom: 5px solid transparent;
+
+    &:disabled {
+      color: $hover;
+      pointer-events: none;
+      cursor: default;
+    }
+
+    &:hover, &:focus {
+      border-bottom-color: $hover;
+    }
+  }
+}
+
+  

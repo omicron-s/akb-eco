@@ -1,0 +1,92 @@
+include ./../../layouts/mixins
+article.compare-page
+  .container
+    .row
+      h2.title Сравнение товаров
+    .compare-page__header
+      .compare-page__header-tab Все характеристики
+      +input-checkbox("compare-page__checkbox","Только отличия")
+      button.btn-i Очистить сравнение
+    .compare-page__table
+      .compare-page__swiper
+        .row.swiper-container.swiper-product
+          button.swiper-button-prev
+          .swiper-wrapper
+            +card-compare('1000','1.png','Аккумулятор ATOM 60 A.ч Обратная полярность.', '2300')
+            +card-compare('2000','2.png','Аккумулятор SMART Element 65 А.ч Обратная полярность', '2000')
+            +card-compare('3000','3.png','Аккумулятор ATOM 60 A.ч Обратная полярность.', '3000')
+            +card-compare('4000','3.png','Аккумулятор ATOM 60 A.ч Обратная полярность.', '4000')
+            +card-compare('5000','1.png','Аккумуляторный аккумулятор аккумулятора Вакуумная Биполярочка', '10000')
+            +card-compare('6000','2.png','Отрицательный аккумулятор холодный Недавака', '100')
+          button.swiper-button-next
+          .swiper-pagination
+        .row.swiper-container.compare-swiper
+          .swiper-wrapper
+            ul.compare-page__list.swiper-slide
+              li.compare-page__list-item(data-attribute="brand")
+                span $attr_1_1
+              li.compare-page__list-item(data-attribute="capacity")
+                span $attr_2_1
+              li.compare-page__list-item(data-attribute="currency")
+                span $attr_3_1
+              li.compare-page__list-item(data-attribute="polarity")
+                span $attr_4_1
+            ul.compare-page__list.swiper-slide
+              li.compare-page__list-item(data-attribute="brand")
+                span $attr_1_2 fsdfdsfdsf sdfdsfsdf sdfsdfsd fsdfsf
+              li.compare-page__list-item(data-attribute="capacity")
+                span $attr_2_2
+              li.compare-page__list-item(data-attribute="currency")
+                span $attr_3_2
+              li.compare-page__list-item(data-attribute="polarity")
+                span $attr_4_2
+            ul.compare-page__list.swiper-slide
+              li.compare-page__list-item(data-attribute="brand")
+                span $attr_1_3
+              li.compare-page__list-item(data-attribute="capacity")
+                span $attr_2_3
+              li.compare-page__list-item(data-attribute="currency")
+                span $attr_3_3
+              li.compare-page__list-item(data-attribute="polarity")
+                span $attr_4_3
+            ul.compare-page__list.swiper-slide
+              li.compare-page__list-item(data-attribute="brand")
+                span $attr_1_4
+              li.compare-page__list-item(data-attribute="capacity")
+                span $attr_2_4
+              li.compare-page__list-item(data-attribute="currency")
+                span $attr_3_4
+              li.compare-page__list-item(data-attribute="polarity")
+                span $attr_4_4 Тут куча текста для теста высоты. Это ппц. Давно я так мозг не напрягал. Но обошлось 2-мя циклами изи! xD
+            ul.compare-page__list.swiper-slide
+              li.compare-page__list-item(data-attribute="brand")
+                span $attr_1_5
+              li.compare-page__list-item(data-attribute="capacity")
+                span $attr_2_5
+              li.compare-page__list-item(data-attribute="currency")
+                span $attr_3_5
+              li.compare-page__list-item(data-attribute="polarity")
+                span $attr_4_5
+            ul.compare-page__list.swiper-slide
+              li.compare-page__list-item(data-attribute="brand")
+                span $attr_1_6
+              li.compare-page__list-item(data-attribute="capacity")
+                span $attr_2_6
+              li.compare-page__list-item(data-attribute="currency")
+                span $attr_3_6
+              li.compare-page__list-item(data-attribute="polarity")
+                span $attr_4_6
+      ul.compare-page__filter.compare-page__list
+        li.compare-page__list-item(data-attribute="brand")
+          button.btn-close
+          span $brand
+        li.compare-page__list-item(data-attribute="capacity")
+          button.btn-close
+          span $capacity
+        li.compare-page__list-item(data-attribute="currency")
+          button.btn-close
+          span $currency
+        li.compare-page__list-item(data-attribute="polarity")
+          button.btn-close
+          span $polarity
+    button.btn-i Очистить сравнение

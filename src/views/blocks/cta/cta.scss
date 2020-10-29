@@ -1,0 +1,82 @@
+.cta {
+  background-image: url("../img/cta/bg.jpg");
+  background-color: $active;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 35px 0 40px;
+  background-position: center;
+
+  @include max-767 {
+    padding: $p-sec-sm;
+  }
+
+  small {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+
+    a {
+      text-decoration: underline;
+      transition: $trans;
+
+      &:hover, &:focus {
+        color: $hover;
+        text-decoration: none;
+      }
+    }
+  }
+
+  // .cta__text
+  &__text {
+    line-height: 1.5;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  // .cta__title
+  &__title {
+  }
+
+  // .cta__subtitle
+  &__subtitle {
+    font-size: 18px;
+    margin: 0;
+  }
+
+  // .cta__form
+  &__form {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+
+    input, button {
+      flex: 0 1 270px;
+      margin: 15px;
+      padding: 1em;
+
+      @include max-767 {
+        margin: 5px;
+      }
+    }
+
+    input {
+      border: 1px solid #000;
+      transition: $trans;
+      
+      &:hover, &:focus {
+        border-color: $hover;
+        
+        &::placeholder {
+          opacity: 1;
+          transition: $trans;
+        }
+      }
+
+      &::placeholder {
+        opacity: 0;
+        transition: $trans;
+      }
+    }
+  }
+}
+  

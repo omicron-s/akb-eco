@@ -1,0 +1,114 @@
+.input-search {
+  $inputBorderWidth: 1px; //толщина бордера инпута
+  $inputBorderColor: #bfc1bf; //цвет бордера инпута
+  $inputBGC: #fff; //цвет фона инпута
+  $inputPad: 1em; //padding бордера
+
+  $placeBGC: $headMenu; //цвет "placeholder"
+  $placeTop: 0.6; //сдвиг вверх "placeholder"
+  $pseudoHeight: (1 - $placeTop) * 100%; //высота before  в процентах
+
+  $iconSize: 15px; //размерз иконки поиска
+
+  $lineHeight: 1.15; //default
+  
+  position: relative;
+
+  &:focus-within, input:not(:invalid)~ {
+
+    .input-search__placeholder {
+      top: -#{$placeTop}em; //Преобразование числа в em
+      left: 0;
+      transition: color $trans, left $trans, top $trans $transTimer, background-color $trans $transTimer;
+      background-color: $placeBGC;
+
+      &::before {
+        width: 100%;
+        height: calc(#{$pseudoHeight} * #{$lineHeight} + 2px); /* умножаем на высоту строки + padding "placeholder" */
+        transition: border-color $trans, border-width $trans $transTimer, width $trans calc(#{$transTimer} + .1s), height $trans calc(#{$transTimer} + .2s);
+        border-width: $inputBorderWidth;
+      }
+    }
+
+    .input-search__icon {
+      font-size: 0;
+      transition: $trans;
+    }
+  }
+
+  &:focus-within {
+    .input-search__placeholder {
+      color: $hover;
+
+      &::before {
+        border-color: transparent $hover $hover transparent;
+      }
+    }
+  }
+
+  input {
+    width: 100%;
+    border: $inputBorderWidth solid $inputBorderColor;
+    background-color: $inputBGC;
+    padding: $inputPad;
+    transition: $trans;
+
+    &::placeholder {
+      opacity: 0;
+    }
+
+    &:hover, &:focus {
+      border: $inputBorderWidth solid $hover;
+    }
+  }
+  // .input-search__placeholder
+  &__placeholder {
+    position: absolute;
+    z-index: 1;
+    top: calc(#{$inputPad} - #{$inputBorderWidth}); /*  -бордер инпута */
+    left: calc(#{$inputPad} - 5px + #{$inputBorderWidth}); /*  -паддинг и -бордер инпута */
+    padding: 2px 5px;
+    pointer-events: none;
+    user-select: none;
+    background-color: inherit;
+    transition: color $trans, left $trans calc(#{$transTimer} + .3s), top $trans .3s, background-color $trans .3s;
+    color: #000;
+
+    &::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: $inputBorderWidth;
+      margin: 0 auto;
+      border-color: transparent $inputBorderColor $inputBorderColor transparent;
+      border-style: solid;
+      border-width: 0;
+      transition: border-color $trans, border-width $trans calc(#{$transTimer} + .2s), width $trans calc(#{$transTimer} + .1s), height $trans;
+    }
+  }
+
+  // .input-search__icon
+  &__icon {
+    position: absolute;
+    top: 50%;
+    right: calc(1rem - #{$inputBorderWidth}); /*  -паддинг и -бордер инпута */
+    transform: translateY(-50%);
+    transition: $trans calc(#{$transTimer} + .3s);
+    font-size: $iconSize;
+    pointer-events: none;
+    user-select: none;
+
+    &:before { /* Эта иконка должны быть тоньше, но она платная */
+      content: fa-content($fa-var-search);
+    }
+  }
+}
+
+
+
+
+  
